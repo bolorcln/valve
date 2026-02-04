@@ -1,0 +1,195 @@
+#####################################################################
+#  PIGGY'S DEADLOCK MAX-FPS COMPETITIVE CONFIG (ALL-IN-ONE)
+#
+#  Goal:
+#  - Maximum FPS
+#  - Clean visuals
+#####################################################################
+#  BEST MODS I USE
+# - Mod Manager           		| https://gamebanana.com/tools/20646
+# - Top Bar Plus (HUD) 			| https://gamebanana.com/mods/623518
+# - Show Passive items (HUD) 		| https://gamebanana.com/mods/601444 | Get standalone_30_8.7z + filter_for_passive_items
+# - Show stats in shop (INFO)		| https://gamebanana.com/mods/617072 | I use this for making builds
+# - Crosshair X (Crosshair overlay)	| https://store.steampowered.com/app/1366800/Crosshair_X | Disable ingame crosshair when using
+#####################################################################
+ 
+ 
+#####################################################################
+# VIDEO.CFG
+# Location: C:\Program Files (x86)\Steam\steamapps\common\Deadlock\game\citadel\cfg
+#####################################################################
+ 
+"video.cfg"
+{
+    "Version" "20"					
+    "VendorID" "4318"  			// Change to your VendoID            
+    "DeviceID" "10114"			// Change to your DeviceID               
+ 
+    // ---------------- DISPLAY ----------------
+    "setting.defaultres" "2560"        			  	// Change to your res      
+    "setting.defaultresheight" "1440"  	 			// Change to your res
+    "setting.recommendedheight" "1440"  	    	    	// Change to your res
+    "setting.refreshrate_numerator" "36000"  			// 144Hz = 14400 | 240Hz = 24000 ect
+    "setting.refreshrate_denominator" "1"
+    "setting.fullscreen" "0"      				// 0 = Borderless, 1 = Exclusive Fullscreen
+    "setting.nowindowborder" "1" 
+    "setting.fullscreen_min_on_focus_loss" "1"
+    "setting.monitor_index" "0"
+    "setting.high_dpi" "0"
+    "setting.aspectratiomode" "0"
+ 
+   // ================= PERFORMANCE =================
+    "setting.cpu_level" "3"
+    "setting.mem_level" "0"
+    "setting.gpu_mem_level" "2"
+    "setting.gpu_level" "1"       // Change this depending on ur gpu (3 max - 1 lowest)
+    "setting.mat_vsync" "0"
+    "setting.r_low_latency" "1"
+    "setting.fps_max" "400"				// Change this to cap fps
+    "setting.mat_viewportscale" "1"
+ 
+    // ================= AA / UPSCALING =================
+    "setting.r_citadel_antialiasing" "0"
+    "setting.r_citadel_upscaling" "0"
+    "setting.r_citadel_dlss_settings_mode" "0"
+    "setting.r_dlss_preset" "0"
+    "setting.r_citadel_fsr_rcas_sharpness" "0"
+    "setting.r_citadel_fsr2_sharpness" "0"
+ 
+    // ================= POST PROCESS =================
+    "setting.r_effects_bloom" "false"
+    "setting.r_post_bloom" "false"
+    "setting.r_depth_of_field" "false"
+    "setting.r_citadel_motion_blur" "0"
+    "setting.r_reduce_flash" "1"
+ 
+    // ================= SHADOWS & LIGHTING =================
+    "setting.r_shadows" "0"
+    "setting.r_citadel_shadow_quality" "0"
+    "setting.csm_max_shadow_dist_override" "0"
+    "setting.csm_max_num_cascades_override" "0"
+    "setting.csm_viewmodel_shadows" "0"
+    "setting.lb_enable_shadow_casting" "false"
+    "setting.lb_dynamic_shadow_resolution" "false"
+    "setting.r_area_lights" "0"
+    "setting.r_arealights" "false"
+ 
+    // ================= SSAO / AO =================
+    "setting.r_citadel_ssao" "0"
+    "setting.r_citadel_ssao_quality" "0"
+    "setting.r_citadel_distancefield_ao_quality" "0"
+ 
+    // ================= FOG =================
+    "setting.r_citadel_fog_quality" "0"
+    "setting.volume_fog_width" "32"
+    "setting.volume_fog_height" "32"
+    "setting.volume_fog_depth" "16"
+ 
+    // ================= TEXTURES / MATERIALS =================
+    "setting.shaderquality" "1"
+    "setting.r_displacement_mapping" "0"
+    "setting.r_dashboard_render_quality" "0"
+    "setting.r_texture_stream_mip_bias" "4"  			// Change this to 3 if you struggle seeing sinner lights
+ 
+    // ================= PARTICLES =================
+    "setting.r_particle_max_detail_level" "1"
+    "setting.r_particle_shadows" "0"
+    "setting.r_particle_cables_cast_shadows" "0"
+    "setting.r_particle_depth_feathering" "false"
+    "setting.r_citadel_half_res_noisy_effects" "true"
+    "setting.cl_particle_fallback_base" "4"
+    "setting.cl_particle_fallback_multiplier" "4"
+ 
+    // ================= VISIBILITY =================
+    "setting.r_distancefield_enable" "true"
+    "setting.r_citadel_outlines" "1"
+    "setting.r_fullscreen_gamma" "2.2"
+ 
+    // ================= MISC =================
+    "setting.useadvanced" "1"
+    "setting.coop_fullscreen" "0"
+    "setting.r_light_sensitivity_mode" "false"
+}
+#####################################################################
+# AUTOEXEC.CFG
+# Location: C:\Program Files (x86)\Steam\steamapps\common\Deadlock\game\citadel\autoexec.cfg
+#####################################################################
+ 
+// ================= INPUT & PERFORMANCE =================
+mat_vsync 0                  // Disable V-Sync for max FPS
+r_low_latency 1              // Low latency mode
+r_lod 2	                     
+cl_ragdoll_limit 1           
+rate 786432                  // Network rate
+cl_interp 0                  // Interpolation off
+cl_interp_ratio 1
+cl_predict 1                 // Enable client-side prediction
+ 
+// ================= PARTICLES =================
+r_drawparticles 1                    // Enable particles
+r_particle_max_detail_level 1        // Low particle detail
+r_particle_shadows 0                 // Disable particle shadows
+r_particle_cables_cast_shadows 0     // Disable particle cable shadows
+r_citadel_half_res_noisy_effects 1  // Low-res particle effects
+cl_particle_fallback_base 2
+cl_particle_fallback_multiplier 2
+ 
+// ================= VISUALS =================
+r_drawdetailprops 0           // Disable small details
+r_shadows 0                   // Disable shadows
+r_citadel_motion_blur 0       // Disable motion blur
+r_effects_bloom 0             // Disable bloom
+r_post_bloom 0                // Disable post bloom
+r_citadel_fog_quality 0       // Disable fog
+r_ssao 0                      // Disable SSAO
+r_displacement_mapping 0      // Disable displacement mapping
+r_area_lights 0               // Disable area lights
+ 
+#####################################################################
+# GAMEINFO.GI CONVARS
+# Add inside ConVars block
+# Location: C:\Program Files (x86)\Steam\steamapps\common\Deadlock\game\citadel
+#####################################################################
+ 
+// ---------------- Cloth (model stability) ----------------
+"cloth_update" "1"
+"cloth_sim_on_tick" "1"
+"r_hair_ao" "0"
+ 
+// ---------------- Grass & terrain ----------------
+"r_grass_quality" "0"
+"r_grass_start_fade" "0"
+"r_grass_end_fade" "0"
+ 
+// ---------------- Decals ----------------
+"r_character_decal_resolution" "1"
+"r_drawmodeldecals" "0"
+ 
+// ---------------- Fog ----------------
+"r_enable_volume_fog" "0"
+"r_enable_gradient_fog" "0"
+"r_enable_cubemap_fog" "0"
+ 
+// ---------------- Screen effects / visibility ----------------
+"r_ssao" "0"
+"r_particle_shadows" "0"
+"r_distancefield_enable" "1"
+"r_citadel_outlines" "1"
+ 
+#####################################################################
+# STEAM LAUNCH OPTIONS
+#####################################################################
+ 
+-novid +cl_forcepreload 1 -noassert +citadel_unit_status_use_new true
+ 
+Remove citadel_unit_status_use_new true  if you dont want new healthbars
+ 
+#####################################################################
+# OPTIONAL TWEAKS
+#####################################################################
+ 
+- Process Lasso
+https://bitsum.com/download-process-lasso/
+ 
+#####################################################################
+# END OF PIGGY'S DEADLOCK CONFIG
